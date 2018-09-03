@@ -1,6 +1,7 @@
 package com.gs.spring5.springin5steps;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,13 +11,14 @@ public class BinarySearchImpl {
   private   SortAlgorithms   bubbleShortAlgorithm;*/
 
   @Autowired
-  private   SortAlgorithms   sortAlgorithms;
+  @Qualifier("quick")
+  private   SortAlgorithms algorithms;
 
   public int binarySearch(int[] numbers,int givenNumber)
   {
     //sort the array
-    sortAlgorithms.sort(numbers);
-    System.out.println(sortAlgorithms);
+    algorithms.sort(numbers);
+    System.out.println(algorithms);
     //search the given number
     //return the index
     return 3;
